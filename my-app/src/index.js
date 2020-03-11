@@ -4,15 +4,16 @@ import './index.css';
 
 class FlipImage extends React.Component {
   handleClick() {
+    image = imageIsA ? this.state.image[0] : this.state.image[1]
     this.setState({
-      image: this.props.b,
+      image: image,
       imageIsA: !this.state.imageIsA
     });
   }
   constructor(props) {
     super(props);
     this.state = {
-        image: this.props.a,
+        image: [this.props.a, this.props.b],
         imageIsA : true,
     }
   }
