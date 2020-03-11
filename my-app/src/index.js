@@ -3,25 +3,27 @@ import ReactDOM from 'react-dom';
 import './index.css';
 
 class FlipImage extends React.Component {
-  handleClick() {
-    image = imageIsA ? this.state.image[0] : this.state.image[1]
-    this.setState({
-      image: image,
-      imageIsA: !this.state.imageIsA
-    });
-  }
+
   constructor(props) {
     super(props);
     this.state = {
-        image: [this.props.a, this.props.b],
+        image: this.props.a,
         imageIsA : true,
     }
   }
   render() {
-    return (
-      <img src={this.state.image} alt = "first image"
-      onClick={() => alert('click')}/>
-    )
+
+    if (this.state.imageIsA){
+      return (
+        <img src={this.state.image} alt = "first image"
+        onClick={() => this.setState({image: this.props.b, imageIsA: false,})}/>
+      )
+    } else {
+      return (
+        <img src={this.state.image} alt = "first image"
+        onClick={() => this.setState({image: this.props.a, imageIsA: true,})}/>
+      )
+    }
   }
 }
 
