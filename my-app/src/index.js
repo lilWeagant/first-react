@@ -15,12 +15,12 @@ class FlipImage extends React.Component {
 
     if (this.state.imageIsA){
       return (
-        <img src={this.state.image} alt = "first image"
+        <img src={this.state.image} alt = "curling collage"
         onClick={() => this.setState({image: this.props.b, imageIsA: false,})}/>
       )
     } else {
       return (
-        <img src={this.state.image} alt = "first image"
+        <img src={this.state.image} alt = "pokemon collage"
         onClick={() => this.setState({image: this.props.a, imageIsA: true,})}/>
       )
     }
@@ -29,8 +29,8 @@ class FlipImage extends React.Component {
 
 ReactDOM.render(
   <FlipImage
-	 a="https://upload.wikimedia.org/wikipedia/commons/0/0b/Cat_poster_1.jpg"
-	 b="https://upload.wikimedia.org/wikipedia/commons/d/d9/Collage_of_Nine_Dogs.jpg"
+	 a="https://s17962.pcdn.co/wp-content/blogs.dir/58/files/2018/09/collage2.jpg"
+	 b="https://cdn.unifiedcommerce.com/content/product/large/079346117697.jpg"
   />,
   document.getElementById('root')
 );
